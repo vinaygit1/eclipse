@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('SCM CheckOut') {
+    stage('Code CheckOut') {
       steps {
-        git(url: 'git@github.com:ranjeetgill/neweclipse.git', branch: '/master')
+        git(url: 'https://github.com/ranjeetgill/eclipse.git', branch: 'master')
       }
     }
   }
