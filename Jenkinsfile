@@ -11,5 +11,10 @@ pipeline {
         sh 'mvn clean install -f myapp/pom.xml'
       }
     }
+    stage('Deploy war') {
+      steps {
+        sh 'sudo cp myapp/target/myapp.war /usr/share/tomcat/webapps/'
+      }
+    }
   }
 }
