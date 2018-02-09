@@ -16,5 +16,10 @@ pipeline {
         sh 'sudo cp myapp/target/myapp.war /usr/share/tomcat/webapps/'
       }
     }
+    stage('Message') {
+      steps {
+        echo 'Deployment Completed Successful'
+      }
+    }
   }
 }
