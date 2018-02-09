@@ -2,8 +2,17 @@ pipeline {
   agent any
   stages {
     stage('Code CheckOut') {
-      steps {
-        git(url: 'https://github.com/ranjeetgill/eclipse.git', branch: 'master')
+      parallel {
+        stage('Code CheckOut') {
+          steps {
+            git(url: 'https://github.com/ranjeetgill/eclipse.git', branch: 'master')
+          }
+        }
+        stage('SCM Message') {
+          steps {
+            echo 'Code CheckOut Completed'
+          }
+        }
       }
     }
     stage('Build war') {
