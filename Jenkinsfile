@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Deploy2Tomcat') {
       steps {
-        sh 'sudo cp myapp/target/myapp.war /opt/tomcat/webapps/'
+        sh 'sudo cp myapp/target/myapp.war  /opt/tomcat/apache-tomcat-8.0.50/webapps/'
       }
     }
   }
